@@ -7,4 +7,13 @@ const projectFactory = (name, toDos) =>{
     }
 }
 
-export {projectFactory}
+const toDoFactory = (name, description, dueDate, priority) =>{
+    return{
+        name: name,
+        description: description,
+        dueDate: dueDate,
+        priority: priority,
+    }
+}
+
+export {projectFactory, toDoFactory}
