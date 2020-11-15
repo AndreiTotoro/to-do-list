@@ -1,5 +1,4 @@
 import {elementCreator} from "./elementCreator"
-import {taskMaker} from "./taskMaker"
 import {defaultProject} from "./index"
 import './cssReset.css'
 import './pageLoad.css'
@@ -19,6 +18,23 @@ const domElements = {
     defaultProjectContainer: elementCreator().divMaker('defaultProject'),
     defaultProjectTitle: elementCreator().elMaker("h1", "Default Project", "defaultProjectTitle")
 }
+
+const taskMaker = (text) =>{
+    const taskAdder = {
+         taskCard: elementCreator().divMaker("taskCard"),
+         title: elementCreator().elMaker("h1", text, "taskText"),
+         buttons: elementCreator().divMaker("taskButtons"),
+         doneButton: elementCreator().elMaker("button", "✔️", "doneButton"),
+         removeButton: elementCreator().elMaker("button", "❌", "removeButton")
+     }
+     elementCreator().bodyAppender(domElements.defaultProjectContainer)
+     elementCreator().appender(domElements.defaultProjectContainer, taskAdder.taskCard)
+     elementCreator().appender(taskAdder.taskCard, taskAdder.title)
+     elementCreator().appender(taskAdder.taskCard, taskAdder.buttons)
+     elementCreator().appender(taskAdder.buttons, taskAdder.doneButton)
+     elementCreator().appender(taskAdder.buttons, taskAdder.removeButton)
+ 
+ }
 
 
 const pageLoad = () =>{
