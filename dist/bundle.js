@@ -1,0 +1,1 @@
+(()=>{"use strict";console.log({name:"Default",toDos:["To do 1","To do 2"]})})();
