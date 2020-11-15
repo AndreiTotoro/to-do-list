@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+body{
+    font-family: 'Handlee', cursive;
+}
+
+.main{
+    display: flex;
+    justify-content: center;
+}
+
+.logo{
+    font-size: 5vw;
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+}
+
+.taskCard{
+    background-color: black;
+    color: wheat;
+    margin: auto;
+    padding: 1rem;
+    width: fit-content;
+}
