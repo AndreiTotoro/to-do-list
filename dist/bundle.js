@@ -1,1 +1,1 @@
-(()=>{"use strict";const e=(e,o,t,i)=>({name:e,description:o,dueDate:t,priority:i});console.log(("Test",{name:"Test",toDos:[e("Name1","Description1",13,"High"),e("Name2","Description2",12,"Low")]}))})();
+(()=>{"use strict";const e={name:"Example Project",toDos:[("Example To Do","An example to do element",12,"Low",{name:"Example To Do",description:"An example to do element",dueDate:12,priority:"Low"})]};console.log(e)})();
