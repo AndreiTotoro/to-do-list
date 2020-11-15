@@ -1,9 +1,4 @@
-const makerTemplate = (whatToMake, text = "", cssClass) =>{
-      const el = document.createElement(whatToMake)
-      el.classList.add(cssClass)
-      el.textContent = text
-      return el
-}
+
 
 const elementCreator = () => {
 
@@ -11,16 +6,18 @@ const elementCreator = () => {
 
    return {
     divMaker: (cssClass) =>{
-      return makerTemplate("div", text, cssClass)
+      const el = document.createElement("div")
+      el.classList.add(cssClass)
+      return el
     },
 
-    h1Maker: (text, cssClass) =>{
-       return makerTemplate("h1", text, cssClass)
-    },
+    elMaker: (whatToMake, text = "", cssClass) =>{
+      const el = document.createElement(whatToMake)
+      el.classList.add(cssClass)
+      el.textContent = text
+      return el
+   },
 
-    pMaker: (text, cssClass) => {
-      return makerTemplate("p", text, cssClass)
-    },
     bodyAppender: (whatToAppend) =>{
       body.appendChild(whatToAppend)
     },
