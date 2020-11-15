@@ -1,8 +1,9 @@
 
-const elementCreator =  {
+const elements = () => {
 
-    body: document.querySelector('content'),
+   const body = document.querySelector('content')
 
+   return {
     divMaker: () =>{
        return document.createElement('div')
     },
@@ -11,14 +12,15 @@ const elementCreator =  {
        return document.createElement('h1')
     },
 
-    pMaker: () =>{
+    pMaker: () => {
        return document.createElement('p')
     },
-
-    appender: (whereToAppend, whatToAppend) =>{
-        return whereToAppend.appendChild(whatToAppend)
+    bodyAppender: (whatToAppend) =>{
+      body.appendChild(whatToAppend)
     }
+   }
 
 }
 
-export {elementCreator}
+
+export {elements}
