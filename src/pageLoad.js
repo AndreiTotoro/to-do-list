@@ -4,20 +4,26 @@ import {defaultProject} from "./index"
 import './cssReset.css'
 import './pageLoad.css'
 
-function buttonTest(){
-    taskMaker(defaultProject.name)
-}
+
 
 const domElements = {
     main: elementCreator().divMaker("main"),
     logo: elementCreator().elMaker("h1", "Andrew's To Do List", "logo"),
-    addTaskButton: elementCreator().elMaker("button", "Test Adding Thins", "testButton")
+    
+}
+
+const newToDoButton = () =>{
+    const button = elementCreator().elMaker("button", "Add To Do", "newToDoButton")
+    button.addEventListener('click', () =>{
+        console.log("test")
+    })
+    return button
 }
 
 const pageLoad = () =>{
     elementCreator().bodyAppender(domElements.main)
     elementCreator().appender(domElements.main, domElements.logo)
-    elementCreator().bodyAppender(domElements.addTaskButton)
+    elementCreator().bodyAppender(newToDoButton())
 }
 
 export {pageLoad}
