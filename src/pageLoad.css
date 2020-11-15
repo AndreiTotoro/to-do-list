@@ -18,7 +18,10 @@ body{
 .taskCard{
     background-color: black;
     color: wheat;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
     margin: auto;
     padding: 1rem;
-    width: fit-content;
+    width: 15vw;
 }
