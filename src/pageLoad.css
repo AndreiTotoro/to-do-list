@@ -25,3 +25,14 @@ body{
     padding: 1rem;
     width: 15vw;
 }
+
+.newToDoButton{
+    background-color: black;
+    color: wheat;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: auto;
+    padding: 1rem;
+    width: 15vw;
+}
