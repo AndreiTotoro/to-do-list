@@ -1,1 +1,1 @@
-(()=>{"use strict";const e={name:"Example Project",toDos:[("Example To Do","An example to do element",12,"Low",{name:"Example To Do",description:"An example to do element",dueDate:12,priority:"Low"})]};console.log(e)})();
+(()=>{"use strict";const e=(e,o,t,n)=>({name:e,description:o,dueDate:t,priority:n});document.querySelector("content"),e("Example To Do1","An example to do element",12,"Low"),e("Example To Do2","An example to do element",15,"Medium")})();
