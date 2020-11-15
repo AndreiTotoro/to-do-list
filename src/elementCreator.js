@@ -1,26 +1,35 @@
+const makerTemplate = (whatToMake, text = "", cssClass) =>{
+      const el = document.createElement(whatToMake)
+      el.classList.add(cssClass)
+      el.textContent = text
+      return el
+}
 
-const elements = () => {
+const elementCreator = () => {
 
    const body = document.querySelector('#content')
-   
+
    return {
-    divMaker: () =>{
-       return document.createElement('div')
+    divMaker: (cssClass) =>{
+      return makerTemplate("div", text, cssClass)
     },
 
-    h1Maker: () =>{
-       return document.createElement('h1')
+    h1Maker: (text, cssClass) =>{
+       return makerTemplate("h1", text, cssClass)
     },
 
-    pMaker: () => {
-       return document.createElement('p')
+    pMaker: (text, cssClass) => {
+      return makerTemplate("p", text, cssClass)
     },
     bodyAppender: (whatToAppend) =>{
       body.appendChild(whatToAppend)
+    },
+    appender: (whereToAppend, whatToAppend) =>{
+       whereToAppend.appendChild(whatToAppend)
     }
    }
 
 }
 
 
-export {elements}
+export {elementCreator}
