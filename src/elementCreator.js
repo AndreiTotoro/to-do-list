@@ -1,8 +1,8 @@
 
 const elements = () => {
 
-   const body = document.querySelector('content')
-
+   const body = document.querySelector('#content')
+   
    return {
     divMaker: () =>{
        return document.createElement('div')
