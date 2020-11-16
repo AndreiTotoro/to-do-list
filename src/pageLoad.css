@@ -23,7 +23,7 @@ body{
     justify-content: space-between;
     margin: auto;
     padding: 1rem;
-    width: 15vw;
+    width: 70%;
 }
 
 .newToDoButton{
@@ -34,5 +34,18 @@ body{
     justify-content: space-between;
     margin: auto;
     padding: 1rem;
-    width: 15vw;
+    width: 100%;
+}
+
+.defaultProjectContainer{
+    display: flex;
+    flex-wrap: wrap ;
+    justify-content: center;
+    text-align: center;
+    width: 20rem;
+    margin: auto;
+}
+
+.defaultProjectTitle{
+    font-size: 3rem;
 }

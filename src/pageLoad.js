@@ -15,7 +15,8 @@ const domElements = {
     })
     return button
     },
-    defaultProjectContainer: elementCreator().divMaker('defaultProject'),
+    defaultProjectContainer: elementCreator().divMaker('defaultProjectContainer'),
+    projectInfoContainer: elementCreator().divMaker('projectInfoContainer'),
     defaultProjectTitle: elementCreator().elMaker("h1", "Default Project", "defaultProjectTitle")
 }
 
@@ -41,8 +42,9 @@ const pageLoad = () =>{
     elementCreator().bodyAppender(domElements.main)
     elementCreator().appender(domElements.main, domElements.logo)
     elementCreator().bodyAppender(domElements.defaultProjectContainer)
-    elementCreator().appender(domElements.defaultProjectContainer, domElements.defaultProjectTitle)
-    elementCreator().appender(domElements.defaultProjectContainer, domElements.newToDoButton())
+    elementCreator().appender(domElements.defaultProjectContainer, domElements.projectInfoContainer)
+    elementCreator().appender(domElements.projectInfoContainer, domElements.defaultProjectTitle)
+    elementCreator().appender(domElements.projectInfoContainer, domElements.newToDoButton())
 }
 
 export {pageLoad}
