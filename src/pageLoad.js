@@ -1,5 +1,5 @@
 import {elementCreator} from "./elementCreator"
-import {defaultProject} from "./index"
+import {toDoFactory} from './factories'
 import './cssReset.css'
 import './pageLoad.css'
 
@@ -11,7 +11,7 @@ const domElements = {
     newToDoButton: () =>{
         const button = elementCreator().elMaker("button", "Add To Do", "newToDoButton")
         button.addEventListener('click', () =>{
-        taskMaker(defaultProject.name)
+        console.log(newTask())
     })
     return button
     },
@@ -34,7 +34,15 @@ const taskMaker = (text) =>{
      elementCreator().appender(taskAdder.taskCard, taskAdder.buttons)
      elementCreator().appender(taskAdder.buttons, taskAdder.doneButton)
      elementCreator().appender(taskAdder.buttons, taskAdder.removeButton)
- 
+ }
+
+
+ const newTask = () => {
+     const name = prompt('What is the name of the task?')
+     const description = prompt('What is the description of this task?')
+     const dueDate = prompt('When is this task due?')
+     const priority = prompt('What is the priority of this task?')
+     toDoFactory(name, description, dueDate, priority)
  }
 
 
@@ -48,3 +56,4 @@ const pageLoad = () =>{
 }
 
 export {pageLoad}
+export {taskMaker}

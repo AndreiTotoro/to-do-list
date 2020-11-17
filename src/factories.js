@@ -1,4 +1,4 @@
-
+import {taskMaker} from './pageLoad'
 
 const projectFactory = (name, toDos) =>{
     return{
@@ -8,6 +8,7 @@ const projectFactory = (name, toDos) =>{
 }
 
 const toDoFactory = (name, description, dueDate, priority) =>{
+    taskMaker(name)
     return{
         name: name,
         description: description,
