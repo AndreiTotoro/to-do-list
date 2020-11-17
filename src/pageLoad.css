@@ -49,3 +49,8 @@ body{
 .defaultProjectTitle{
     font-size: 3rem;
 }
+
+.done{
+    background-color: greenyellow;
+    color: black
+}

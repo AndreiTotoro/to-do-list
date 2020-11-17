@@ -7,14 +7,4 @@ const projectFactory = (name, toDos) =>{
     }
 }
 
-const toDoFactory = (name, description, dueDate, priority) =>{
-    taskMaker(name)
-    return{
-        name: name,
-        description: description,
-        dueDate: dueDate,
-        priority: priority,
-    }
-}
-
-export {projectFactory, toDoFactory}
+export {projectFactory}

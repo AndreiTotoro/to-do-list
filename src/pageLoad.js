@@ -1,5 +1,4 @@
 import {elementCreator} from "./elementCreator"
-import {toDoFactory} from './factories'
 import './cssReset.css'
 import './pageLoad.css'
 
@@ -20,14 +19,38 @@ const domElements = {
     defaultProjectTitle: elementCreator().elMaker("h1", "Default Project", "defaultProjectTitle")
 }
 
-const taskMaker = (text) =>{
+const taskMaker = (text, taskDescription, taskDueDate, taskPriority) =>{
     const taskAdder = {
          taskCard: elementCreator().divMaker("taskCard"),
          title: elementCreator().elMaker("h1", text, "taskText"),
+         name: text,
+         description: taskDescription,
+         dueDate: taskDueDate,
+         priority: taskPriority,
          buttons: elementCreator().divMaker("taskButtons"),
          doneButton: elementCreator().elMaker("button", "✔️", "doneButton"),
          removeButton: elementCreator().elMaker("button", "❌", "removeButton")
      }
+
+     taskAdder.removeButton.addEventListener('click', () => {
+        domElements.defaultProjectContainer.removeChild(taskAdder.taskCard)
+     })
+
+     taskAdder.doneButton.addEventListener('click', () => {
+         if (taskAdder.taskCard.classList.contains('done') == false){
+            taskAdder.taskCard.classList.add('done')
+         } else {
+             taskAdder.taskCard.classList.remove('done')
+         }
+       
+     })
+
+     taskAdder.taskCard.addEventListener('click', () => {
+         alert(`The description of the task is ${taskAdder.description} the due date of the task is ${taskAdder.dueDate} and the priority is ${taskAdder.priority}`)
+     })
+
+
+
      elementCreator().bodyAppender(domElements.defaultProjectContainer)
      elementCreator().appender(domElements.defaultProjectContainer, taskAdder.taskCard)
      elementCreator().appender(taskAdder.taskCard, taskAdder.title)
@@ -42,7 +65,7 @@ const taskMaker = (text) =>{
      const description = prompt('What is the description of this task?')
      const dueDate = prompt('When is this task due?')
      const priority = prompt('What is the priority of this task?')
-     toDoFactory(name, description, dueDate, priority)
+     taskMaker(name, description, dueDate, priority)
  }
 
 
